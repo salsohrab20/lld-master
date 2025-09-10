@@ -1,4 +1,4 @@
-package org.practice.landmark;
+package org.practice.atm;
 
 public abstract class Transaction {
     protected Account account;

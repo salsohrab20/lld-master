@@ -1,4 +1,4 @@
-package org.practice.landmark;
+package org.practice.atm;
 
 public class CashDispenser {
     private int cashAvailable;

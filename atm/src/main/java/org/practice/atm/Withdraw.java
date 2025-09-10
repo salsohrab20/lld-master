@@ -1,4 +1,4 @@
-package org.practice.landmark;
+package org.practice.atm;
 
 public class Withdraw extends Transaction {
     private int amount;

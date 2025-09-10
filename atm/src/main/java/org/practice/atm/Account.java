@@ -1,4 +1,4 @@
-package org.practice.landmark;
+package org.practice.atm;
 
 public class Account {
     private int accountNumber;
@@ -29,10 +29,10 @@ public class Account {
         this.accountHolderName = accountHolderName;
     }
 
-    public Account(int accountNumber, int accountBalance, String accountHolderName) {
-        this.accountNumber = accountNumber;
-        this.accountBalance = accountBalance;
-        this.accountHolderName = accountHolderName;
+    public Account(Builder  builder) {
+        this.accountNumber = builder.accountNumber;
+        this.accountBalance = builder.accountBalance;
+        this.accountHolderName = builder.accountHolderName;
     }
 
     public synchronized boolean withdraw(int amount) {
@@ -46,5 +46,30 @@ public class Account {
     public synchronized boolean deposit(int amount) {
         this.accountBalance += amount;
         return true;
+    }
+
+    public static class Builder {
+        private int accountNumber;
+        private int accountBalance;
+        private String accountHolderName;
+
+        public Builder accountNumber(int accountNumber) {
+            this.accountNumber = accountNumber;
+            return this;
+        }
+
+        public Builder accountBalance(int accountBalance) {
+            this.accountBalance = accountBalance;
+            return this;
+        }
+
+        public Builder accountHolderName(String accountHolderName) {
+            this.accountHolderName = accountHolderName;
+            return this;
+        }
+
+        public Account build() {
+            return new Account(this);
+        }
     }
 }

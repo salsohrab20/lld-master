@@ -1,4 +1,4 @@
-package org.practice.landmark;
+package org.practice.atm;
 
 import java.util.Scanner;
 

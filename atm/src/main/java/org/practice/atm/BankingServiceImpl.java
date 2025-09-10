@@ -1,4 +1,4 @@
-package org.practice.landmark;
+package org.practice.atm;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,14 +9,14 @@ public class BankingServiceImpl implements BankService {
     private Map<Integer, Card> cardMap = new HashMap<>();
 
     public BankingServiceImpl() {
-       Account account1 = new Account(1234,10000,"Salman");
-       Account account2 = new Account(1235,1000,"Sohrab");
+       Account account1 = new Account.Builder().accountHolderName("Salman").accountNumber(1234).accountBalance(10000).build();
+       Account account2 = new Account.Builder().accountHolderName("Sohrab").accountNumber(1235).accountBalance(1000).build();
 
        accountMap.put(1234, account1);
        accountMap.put(1235, account2);
 
-       Card card1 = new Card(123490, 1234,123);
-       Card card2 = new Card(123491, 1235,124);
+       Card card1 = new Card.Builder().cardNumber(123490).accountNumber(1234).pin(123).build();
+       Card card2 = new Card.Builder().cardNumber(123491).accountNumber(1235).pin(124).build();
 
        cardMap.put(1234, card1);
        cardMap.put(1235, card2);
